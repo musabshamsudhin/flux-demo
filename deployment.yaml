@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: fluxnginx
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: fluxnginx
   template:
     metadata:
       labels:
-        app: nginx-2
+        app: fluxnginx
     spec:
       containers:
-      - name: nginx
+      - name: fluxnginx
         image: nginx:latest
         ports:
         - containerPort: 80
